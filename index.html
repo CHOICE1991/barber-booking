@@ -21,7 +21,6 @@
       font-family: system-ui, -apple-system, sans-serif; 
     }
     
-    /* 下拉選單內部選項樣式優化 */
     select option { 
       background-color: #18181b; 
       color: #ffffff; 
@@ -32,7 +31,6 @@
       background-color: #09090b; 
     }
 
-    /* 高級暗色光芒特效 */
     .glow-orange-sm {
       box-shadow: 0 0 20px -5px rgba(234, 88, 12, 0.3);
     }
@@ -58,10 +56,10 @@
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 mt-8 space-y-12">
+  <main class="max-w-4xl mx-auto px-4 mt-8 space-y-10">
 
     <!-- 2. Hero 形象區塊 -->
-    <section class="text-center space-y-4 py-8 relative">
+    <section class="text-center space-y-4 py-6 relative">
       <div class="absolute inset-0 -z-10 bg-gradient-to-b from-orange-500/5 via-transparent to-transparent blur-3xl rounded-full"></div>
       
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs tracking-widest uppercase font-semibold rounded-full backdrop-blur-sm">
@@ -74,6 +72,25 @@
       <p class="text-zinc-400 text-sm max-w-md mx-auto leading-relaxed font-light">
         提供最道地的美式漸層、經典結構剪裁。專屬男士的極致理髮體驗。
       </p>
+    </section>
+
+    <!-- 📢 新增：店家公告欄（可自行修改裡面的公休文字） -->
+    <section class="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-2xl p-4 sm:p-5 relative overflow-hidden shadow-lg backdrop-blur-sm">
+      <div class="flex items-start gap-3.5">
+        <div class="p-2.5 bg-orange-500/20 text-orange-400 rounded-xl flex-shrink-0 text-lg">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <h4 class="text-sm font-extrabold text-orange-400 uppercase tracking-wider">STORE ANNOUNCEMENT / 店家公告</h4>
+            <span class="text-[10px] px-2 py-0.5 bg-orange-500/20 text-orange-300 rounded font-mono">NOTICE</span>
+          </div>
+          <!-- ⚠️ 在這裡修改你的公告內容 ⚠️ -->
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
+            📢 <strong>休假公告：</strong> 9/25-9/28中秋連假無營業，歡迎大家提早把預約時段訂下來！
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- 3. Portfolio 作品集展覽區 -->
@@ -113,7 +130,6 @@
 
     <!-- 4. Booking 表單區塊 -->
     <section id="booking" class="bg-gradient-to-b from-zinc-900 via-zinc-900/90 to-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden">
-      <!-- 頂部橘色光暈 -->
       <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-orange-500/40 to-transparent blur-sm"></div>
 
       <div class="border-b border-zinc-800/80 pb-4">
@@ -123,13 +139,12 @@
 
       <form id="bookingForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
         
-        <!-- 服務項目 (加大設計感按鈕) -->
+        <!-- 服務項目 -->
         <div>
           <label class="block text-sm font-bold text-zinc-200 mb-3 flex items-center gap-2">
             <span class="text-orange-500">✂️</span> 選擇服務項目
           </label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <!-- 項目 1：美式漸層理髮 -->
             <label class="cursor-pointer group">
               <input type="radio" name="service" value="美式漸層理髮" class="peer hidden" checked>
               <div class="p-4 sm:p-5 rounded-xl border border-zinc-800 bg-zinc-950/90 text-zinc-300 peer-checked:border-orange-500 peer-checked:bg-gradient-to-br peer-checked:from-orange-500/15 peer-checked:to-amber-500/5 peer-checked:text-white transition-all duration-300 shadow-md group-hover:border-zinc-700 relative overflow-hidden flex flex-col justify-between">
@@ -144,7 +159,6 @@
               </div>
             </label>
 
-            <!-- 項目 2：經典結構理髮 -->
             <label class="cursor-pointer group">
               <input type="radio" name="service" value="經典結構理髮" class="peer hidden">
               <div class="p-4 sm:p-5 rounded-xl border border-zinc-800 bg-zinc-950/90 text-zinc-300 peer-checked:border-orange-500 peer-checked:bg-gradient-to-br peer-checked:from-orange-500/15 peer-checked:to-amber-500/5 peer-checked:text-white transition-all duration-300 shadow-md group-hover:border-zinc-700 relative overflow-hidden flex flex-col justify-between">
@@ -182,7 +196,7 @@
             class="w-full p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 text-white placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all cursor-pointer shadow-inner">
         </div>
 
-        <!-- 選擇時段（保持原始下拉選單，樣式優化） -->
+        <!-- 選擇時段 -->
         <div>
           <label class="block text-sm font-semibold text-zinc-300 mb-2">⏰ 預約時段</label>
           <select id="bookTime" class="w-full p-3.5 rounded-xl bg-zinc-950 text-white border border-zinc-800/90 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all cursor-pointer shadow-inner" required>
@@ -204,7 +218,7 @@
           </select>
         </div>
 
-        <!-- 送出按鈕 (加大字體與設計感) -->
+        <!-- 送出按鈕 -->
         <button type="submit" id="submitBtn"
           class="w-full py-4 rounded-xl bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 hover:from-orange-500 hover:to-amber-500 active:scale-[0.99] text-white font-black text-base sm:text-lg tracking-widest uppercase transition-all duration-300 glow-orange-sm hover:glow-orange-lg mt-3 shadow-lg flex items-center justify-center gap-2">
           <span>CONFIRM BOOKING</span>
@@ -226,15 +240,25 @@
 
     <!-- 5. 店面地圖與營業資訊 -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-      <div class="bg-zinc-900/90 border border-zinc-800/80 rounded-2xl p-6 space-y-4 shadow-xl flex flex-col justify-center">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-location-dot text-orange-500"></i> 店面資訊
-        </h3>
-        <div class="space-y-3 text-sm text-zinc-300 leading-relaxed">
-          <p><strong class="text-white">名稱：</strong>南勢理髮 $outh Power Barbershop</p>
-          <p><strong class="text-white">地址：</strong>高雄市鳳山區林森路180號</p>
-          <p><strong class="text-white">營業時間：</strong>09:00 - 22:00（預約制）</p>
+      <div class="bg-zinc-900/90 border border-zinc-800/80 rounded-2xl p-6 space-y-5 shadow-xl flex flex-col justify-between">
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-orange-500"></i> 店面資訊
+          </h3>
+          <div class="space-y-2.5 text-sm text-zinc-300 leading-relaxed">
+            <p><strong class="text-white">名稱：</strong>南勢理髮 $outh Power Barbershop</p>
+            <p><strong class="text-white">地址：</strong>高雄市鳳山區林森路180號</p>
+            <p><strong class="text-white">營業時間：</strong>09:00 - 22:00（預約制）</p>
+          </div>
         </div>
+
+        <!-- 💬 新增：可以直接點擊跳轉 LINE 的按鈕 -->
+        <!-- ⚠️ 請將 href 裡的 https://line.me/ti/p/xxxx 替換成你的官方 LINE 連結 ⚠️ -->
+        <a href="https://line.me/ti/p/FUt1VQJ-35" target="_blank" rel="noopener noreferrer" 
+          class="w-full py-3 px-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-sm rounded-xl transition-all duration-300 flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-950/30 hover:shadow-emerald-900/50 active:scale-[0.99]">
+          <i class="fa-brands fa-line text-xl"></i>
+          <span>加入官方 LINE 諮詢 / 預約聯繫</span>
+        </a>
       </div>
 
       <!-- 地圖容器 -->
@@ -257,9 +281,9 @@
     © 2026 南勢理髮 $outh Power Barbershop. All Rights Reserved.
   </footer>
 
-  <!-- JS 邏輯區塊（100% 保持完全不變） -->
+  <!-- JS 邏輯區塊（完整保留） -->
   <script>
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycbwUZLUC7IxoE7qtfktqfOXcLY2RZdWpzRRsHBVuxbncw2VDXIGa05uYjC89-nJnbDFd/exec';
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbwUZLUC7IxoE7qtfktqfOXcLY2RZdWpzRRsHBVuxbncw2VDXIGa05uYjC89-nJnbDFd/execxxxxx';
 
     const TIME_MAP = {
       "09:00": "09:00 AM",
