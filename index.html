@@ -39,7 +39,7 @@
     }
   </style>
 </head>
-<body class="min-h-screen pb-12 antialiased selection:bg-orange-500 selection:text-white">
+<body class="min-h-screen pb-20 sm:pb-12 antialiased selection:bg-orange-500 selection:text-white">
 
   <!-- 1. Header 品牌頭部 -->
   <header class="border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 transition-all">
@@ -74,7 +74,7 @@
       </p>
     </section>
 
-    <!-- 📢 新增：店家公告欄（可自行修改裡面的公休文字） -->
+    <!-- 📢 店家公告欄 -->
     <section class="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-2xl p-4 sm:p-5 relative overflow-hidden shadow-lg backdrop-blur-sm">
       <div class="flex items-start gap-3.5">
         <div class="p-2.5 bg-orange-500/20 text-orange-400 rounded-xl flex-shrink-0 text-lg">
@@ -85,9 +85,8 @@
             <h4 class="text-sm font-extrabold text-orange-400 uppercase tracking-wider">STORE ANNOUNCEMENT / 店家公告</h4>
             <span class="text-[10px] px-2 py-0.5 bg-orange-500/20 text-orange-300 rounded font-mono">NOTICE</span>
           </div>
-          <!-- ⚠️ 在這裡修改你的公告內容 ⚠️ -->
           <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
-            📢 <strong>休假公告：</strong> 9/25-9/28中秋連假無營業，歡迎大家提早把預約時段訂下來！
+            📢 <strong>連假休息通知：</strong> 店家將於 9/25 - 9/28 連假放假休息！為了確保連假前能順利用到頭髮，歡迎大家提早預約，把時段訂下來～連假前快來找老闆整理髮型吧！
           </p>
         </div>
       </div>
@@ -108,19 +107,19 @@
       <!-- 作品集圖片網格 -->
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-4">
         <div class="aspect-square bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800/80 relative group cursor-pointer shadow-md hover:border-orange-500/50 transition-all duration-300">
-          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="美式漸層" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+          <img src="https://i.ibb.co/p900VNn/IMG-6450.jpg" alt="美式漸層" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3.5 flex items-end">
             <span class="text-xs font-bold text-white tracking-wider">美式高漸層 Fade</span>
           </div>
         </div>
         <div class="aspect-square bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800/80 relative group cursor-pointer shadow-md hover:border-orange-500/50 transition-all duration-300">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="經典後梳" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+          <img src="https://i.ibb.co/prwh5f5R/IMG-6451.jpg" alt="經典後梳" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3.5 flex items-end">
             <span class="text-xs font-bold text-white tracking-wider">經典油頭 Slick Back</span>
           </div>
         </div>
         <div class="aspect-square bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800/80 relative group cursor-pointer shadow-md hover:border-orange-500/50 transition-all duration-300">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="紋理剪裁" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+          <img src="https://i.ibb.co/gMfX51Q9/IMG-6449.jpg" alt="紋理剪裁" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3.5 flex items-end">
             <span class="text-xs font-bold text-white tracking-wider">美式短寸 Crop Haircut</span>
           </div>
@@ -134,15 +133,15 @@
 
       <div class="border-b border-zinc-800/80 pb-4">
         <h3 class="text-2xl font-black text-white tracking-wide">ONLINE BOOKING / 線上預約</h3>
-        <p class="text-xs text-zinc-400 mt-1">選擇項目與日期，快速完成預約手續</p>
+        <p class="text-xs text-zinc-400 mt-1">請填寫完整資訊以完成預約</p>
       </div>
 
-      <form id="bookingForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+      <form id="bookingForm" onsubmit="handleFormSubmit(event)" class="space-y-6" novalidate>
         
         <!-- 服務項目 -->
         <div>
           <label class="block text-sm font-bold text-zinc-200 mb-3 flex items-center gap-2">
-            <span class="text-orange-500">✂️</span> 選擇服務項目
+            <span class="text-orange-500">✂️</span> 選擇服務項目 <span class="text-orange-500 text-xs">*必選</span>
           </label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <label class="cursor-pointer group">
@@ -152,8 +151,11 @@
                   <span class="text-base sm:text-lg font-black tracking-wide group-hover:text-orange-400 transition-colors">美式漸層理髮</span>
                   <span class="text-xs px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400 border border-zinc-700/50 peer-checked:bg-orange-500/20 peer-checked:text-orange-400 peer-checked:border-orange-500/30">洗 + 剪</span>
                 </div>
-                <div class="flex items-baseline justify-between mt-2 pt-2 border-t border-zinc-800/60">
-                  <span class="text-xs text-zinc-500 font-mono">FADE HAIRCUT</span>
+                <div class="flex items-center justify-between text-[11px] text-zinc-500 mt-1">
+                  <span>⏱️ 預估 50-60 分鐘</span>
+                  <span class="font-mono">FADE HAIRCUT</span>
+                </div>
+                <div class="flex items-baseline justify-end mt-2 pt-2 border-t border-zinc-800/60">
                   <span class="text-lg font-black text-orange-400 font-mono">$600</span>
                 </div>
               </div>
@@ -166,8 +168,11 @@
                   <span class="text-base sm:text-lg font-black tracking-wide group-hover:text-orange-400 transition-colors">經典結構理髮</span>
                   <span class="text-xs px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400 border border-zinc-700/50 peer-checked:bg-orange-500/20 peer-checked:text-orange-400 peer-checked:border-orange-500/30">洗 + 剪</span>
                 </div>
-                <div class="flex items-baseline justify-between mt-2 pt-2 border-t border-zinc-800/60">
-                  <span class="text-xs text-zinc-500 font-mono">CLASSIC CUT</span>
+                <div class="flex items-center justify-between text-[11px] text-zinc-500 mt-1">
+                  <span>⏱️ 預估 40-50 分鐘</span>
+                  <span class="font-mono">CLASSIC CUT</span>
+                </div>
+                <div class="flex items-baseline justify-end mt-2 pt-2 border-t border-zinc-800/60">
                   <span class="text-lg font-black text-orange-400 font-mono">$400</span>
                 </div>
               </div>
@@ -178,12 +183,12 @@
         <!-- 個人資訊 -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm font-semibold text-zinc-300 mb-2">👤 顧客姓名</label>
+            <label class="block text-sm font-semibold text-zinc-300 mb-2">👤 顧客姓名 <span class="text-orange-500">*必填</span></label>
             <input type="text" id="clientName" required placeholder="請輸入姓名"
               class="w-full p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 text-white placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all shadow-inner">
           </div>
           <div>
-            <label class="block text-sm font-semibold text-zinc-300 mb-2">📞 行動電話</label>
+            <label class="block text-sm font-semibold text-zinc-300 mb-2">📞 行動電話 <span class="text-orange-500">*必填</span></label>
             <input type="tel" id="clientPhone" required placeholder="0912345678"
               class="w-full p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 text-white placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all shadow-inner">
           </div>
@@ -191,14 +196,14 @@
 
         <!-- 選擇日期 -->
         <div>
-          <label class="block text-sm font-semibold text-zinc-300 mb-2">📅 預約日期</label>
+          <label class="block text-sm font-semibold text-zinc-300 mb-2">📅 預約日期 <span class="text-orange-500">*必選</span></label>
           <input type="text" id="bookDate" required placeholder="點擊選擇日期" readonly
             class="w-full p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 text-white placeholder-zinc-600 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all cursor-pointer shadow-inner">
         </div>
 
         <!-- 選擇時段 -->
         <div>
-          <label class="block text-sm font-semibold text-zinc-300 mb-2">⏰ 預約時段</label>
+          <label class="block text-sm font-semibold text-zinc-300 mb-2">⏰ 預約時段 <span class="text-orange-500">*必選</span></label>
           <select id="bookTime" class="w-full p-3.5 rounded-xl bg-zinc-950 text-white border border-zinc-800/90 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm transition-all cursor-pointer shadow-inner" required>
             <option value="">-- 請選擇預約時段 --</option>
             <option value="09:00">09:00 AM</option>
@@ -238,24 +243,65 @@
       </div>
     </section>
 
-    <!-- 5. 店面地圖與營業資訊 -->
+    <!-- 5. 常見問題 (FAQ 折疊選單) -->
+    <section class="space-y-4">
+      <div class="border-b border-zinc-800/80 pb-3">
+        <h3 class="text-lg font-bold text-white tracking-wider flex items-center gap-2">
+          <span class="w-1 h-4 bg-orange-500 rounded-full"></span> FAQ / 預約常見問題
+        </h3>
+      </div>
+      
+      <div class="space-y-3">
+        <details class="group bg-zinc-900/80 border border-zinc-800 rounded-xl overflow-hidden transition-all duration-200">
+          <summary class="flex justify-between items-center p-4 cursor-pointer text-sm font-bold text-zinc-200 group-open:text-orange-400 select-none">
+            <span>❓ 預約後需要提早多久抵達？</span>
+            <span class="text-zinc-500 group-open:rotate-180 transition-transform duration-200"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <div class="px-4 pb-4 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/50 pt-3">
+            建議提早 5 分鐘抵達。為維護服務品質與後續顧客權益，若遲到超過 10 分鐘，系統將保留取消或調整項目的權利。
+          </div>
+        </details>
+
+        <details class="group bg-zinc-900/80 border border-zinc-800 rounded-xl overflow-hidden transition-all duration-200">
+          <summary class="flex justify-between items-center p-4 cursor-pointer text-sm font-bold text-zinc-200 group-open:text-orange-400 select-none">
+            <span>❓ 臨時需要取消或更換時間怎麼辦？</span>
+            <span class="text-zinc-500 group-open:rotate-180 transition-transform duration-200"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <div class="px-4 pb-4 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/50 pt-3">
+            若需變更預約，請至少提前 2 小時點擊頁面底部的「官方 LINE」告知店家，以便釋出時段給其他需要的顧客。
+          </div>
+        </details>
+
+        <details class="group bg-zinc-900/80 border border-zinc-800 rounded-xl overflow-hidden transition-all duration-200">
+          <summary class="flex justify-between items-center p-4 cursor-pointer text-sm font-bold text-zinc-200 group-open:text-orange-400 select-none">
+            <span>❓ 店家附近方便停車嗎？</span>
+            <span class="text-zinc-500 group-open:rotate-180 transition-transform duration-200"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <div class="px-4 pb-4 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/50 pt-3">
+            店門口可停放機車；若開車前來，林森路沿線設有公有路邊停車格，建議提早 5-10 分鐘前來尋找車位。
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 6. 店面地圖與營業資訊 -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
       <div class="bg-zinc-900/90 border border-zinc-800/80 rounded-2xl p-6 space-y-5 shadow-xl flex flex-col justify-between">
         <div class="space-y-4">
           <h3 class="text-lg font-bold text-white flex items-center gap-2">
             <i class="fa-solid fa-location-dot text-orange-500"></i> 店面資訊
           </h3>
-          <div class="space-y-2.5 text-sm text-zinc-300 leading-relaxed">
+          
+          <div class="space-y-3 text-sm text-zinc-300 leading-relaxed">
             <p><strong class="text-white">名稱：</strong>南勢理髮 $outh Power Barbershop</p>
             <p><strong class="text-white">地址：</strong>高雄市鳳山區林森路180號</p>
             <p><strong class="text-white">營業時間：</strong>09:00 - 22:00（預約制）</p>
           </div>
         </div>
 
-        <!-- 💬 新增：可以直接點擊跳轉 LINE 的按鈕 -->
-        <!-- ⚠️ 請將 href 裡的 https://line.me/ti/p/xxxx 替換成你的官方 LINE 連結 ⚠️ -->
+        <!-- LINE 官方帳號按鈕 -->
         <a href="https://line.me/ti/p/FUt1VQJ-35" target="_blank" rel="noopener noreferrer" 
-          class="w-full py-3 px-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-sm rounded-xl transition-all duration-300 flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-950/30 hover:shadow-emerald-900/50 active:scale-[0.99]">
+          class="w-full py-3.5 px-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-sm rounded-xl transition-all duration-300 flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-950/30 hover:shadow-emerald-900/50 active:scale-[0.99] mt-2">
           <i class="fa-brands fa-line text-xl"></i>
           <span>加入官方 LINE 諮詢 / 預約聯繫</span>
         </a>
@@ -276,12 +322,20 @@
 
   </main>
 
+  <!-- 7. 手機端「底部懸浮預約按鈕」 -->
+  <div id="floatingBar" class="fixed bottom-4 left-4 right-4 z-40 sm:hidden transition-all duration-300">
+    <a href="#booking" class="w-full py-3.5 px-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white font-black text-sm rounded-2xl shadow-2xl flex items-center justify-center gap-2 glow-orange-sm active:scale-[0.98]">
+      <i class="fa-solid fa-calendar-check"></i>
+      <span>⚡ 立即線上預約時段</span>
+    </a>
+  </div>
+
   <!-- 頁尾 Footer -->
   <footer class="text-center py-8 border-t border-zinc-800/80 text-xs text-zinc-500 mt-16 font-mono">
     © 2026 南勢理髮 $outh Power Barbershop. All Rights Reserved.
   </footer>
 
-  <!-- JS 邏輯區塊（完整保留） -->
+  <!-- JS 邏輯區塊 -->
   <script>
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbwUZLUC7IxoE7qtfktqfOXcLY2RZdWpzRRsHBVuxbncw2VDXIGa05uYjC89-nJnbDFd/exec';
 
@@ -346,19 +400,60 @@
       }
     }
 
+    // 表單送出處理（嚴格非空與格式驗證）
     async function handleFormSubmit(e) {
       e.preventDefault();
       
+      const nameVal = document.getElementById('clientName').value.trim();
+      const phoneVal = document.getElementById('clientPhone').value.trim();
+      const dateVal = document.getElementById('bookDate').value.trim();
+      const timeVal = document.getElementById('bookTime').value.trim();
+      const serviceRadio = document.querySelector('input[name="service"]:checked');
+
+      // 1. 檢查服務項目
+      if (!serviceRadio) {
+        alert('請選擇預約的服務項目！');
+        return;
+      }
+
+      // 2. 檢查姓名
+      if (!nameVal) {
+        alert('請輸入您的顧客姓名！');
+        document.getElementById('clientName').focus();
+        return;
+      }
+
+      // 3. 檢查電話
+      if (!phoneVal) {
+        alert('請輸入您的行動電話！');
+        document.getElementById('clientPhone').focus();
+        return;
+      }
+
+      // 4. 檢查日期
+      if (!dateVal) {
+        alert('請點擊選擇預約日期！');
+        document.getElementById('bookDate').focus();
+        return;
+      }
+
+      // 5. 檢查時段（必選防護）
+      if (!timeVal || timeVal === '') {
+        alert('請選擇預約時段！');
+        document.getElementById('bookTime').focus();
+        return;
+      }
+
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.innerText = '確認時段中...';
       submitBtn.disabled = true;
 
       const payload = {
-        service: document.querySelector('input[name="service"]:checked').value,
-        date: document.getElementById('bookDate').value,
-        time: document.getElementById('bookTime').value,
-        name: document.getElementById('clientName').value,
-        phone: document.getElementById('clientPhone').value
+        service: serviceRadio.value,
+        date: dateVal,
+        time: timeVal,
+        name: nameVal,
+        phone: phoneVal
       };
 
       try {
